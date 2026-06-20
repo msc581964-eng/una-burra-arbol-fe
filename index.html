@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Una Burra, un Árbol y mucha Fe — La historia real de María Solís. Descubre en qué punto del camino estás con este quiz gratuito.">
+  <title>Una Burra, un Árbol y mucha Fe — Maria Solís</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset ───────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; }
+    body  {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background-color: #FBEAF0;
+      min-height: 100vh;
+      color: #72243E;
+    }
+
+    /* ── Layout ──────────────────────────────── */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 1.75rem 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .card {
+      border-radius: 1.5rem;
+      padding: 2.75rem 2rem;
+    }
+
+    /* ── Tipografía ──────────────────────────── */
+    .pf { font-family: 'Playfair Display', serif; }
+
+    /* ── Animación entrada ───────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up           { animation: fadeUp 0.55s ease both; }
+    .fade-up.delay-1   { animation-delay: 0.15s; }
+    .fade-up.delay-2   { animation-delay: 0.3s;  }
+
+    /* ════════════════════════════════════════════
+       SECCIÓN 1 — LOGO
+    ════════════════════════════════════════════ */
+    .logo-section {
+      background-color: #FBEAF0;
+      border: 2px solid #ED93B1;
+      text-align: center;
+    }
+    .logo-emoji {
+      font-size: 5.5rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 8px rgba(75,21,40,0.15));
+    }
+    .logo-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 6vw, 2.9rem);
+      font-weight: 700;
+      color: #72243E;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .logo-title em {
+      color: #D4537E;
+      font-style: italic;
+    }
+    .logo-divider {
+      width: 5rem;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #D4537E, transparent);
+      border: none;
+      margin: 0 auto 1.25rem;
+    }
+    .logo-author {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #993556;
+      margin-bottom: 0.8rem;
+    }
+    .logo-tag {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #72243E;
+    }
+
+    /* ════════════════════════════════════════════
+       SECCIÓN 2 — GANCHO
+    ════════════════════════════════════════════ */
+    .gancho-section {
+      background-color: #4B1528;
+      text-align: center;
+    }
+    .gancho-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #D4537E;
+      margin-bottom: 2rem;
+    }
+    .gancho-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.25rem, 4.5vw, 2rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.45;
+      margin-bottom: 1.75rem;
+    }
+    .gancho-quote em {
+      color: #D4537E;
+      font-style: italic;
+    }
+    .gancho-bridge {
+      color: #FBEAF0;
+      line-height: 1.75;
+      font-size: 0.98rem;
+      margin-bottom: 2rem;
+    }
+    .gancho-suspense {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.15rem, 4vw, 1.65rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.45;
+      margin-bottom: 2.5rem;
+    }
+    .gancho-suspense em {
+      color: #D4537E;
+      font-style: italic;
+      font-size: 1.1em;
+      text-shadow: 0 0 20px rgba(212,83,126,0.55);
+    }
+
+    /* ── Botón pill ──────────────────────────── */
+    .btn-pill {
+      display: inline-block;
+      background-color: #D4537E;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1.1rem 2.25rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      line-height: 1.4;
+      box-shadow: 0 4px 16px rgba(212,83,126,0.38);
+      transition: opacity 0.15s, transform 0.12s;
+      font-family: inherit;
+    }
+    .btn-pill:hover  { opacity: 0.88; transform: scale(1.03); }
+    .btn-pill:active { transform: scale(0.97); }
+    .btn-pill.full   { display: block; width: 100%; text-align: center; }
+
+    /* ════════════════════════════════════════════
+       SECCIÓN 3 — QUIZ
+    ════════════════════════════════════════════ */
+    .quiz-section {
+      background-color: white;
+      border: 2px solid #ED93B1;
+    }
+
+    /* Encabezado */
+    .quiz-header        { text-align: center; margin-bottom: 1.75rem; }
+    .quiz-badge {
+      display: inline-block;
+      background-color: #FBEAF0;
+      color: #D4537E;
+      border: 1.5px solid #ED93B1;
+      border-radius: 9999px;
+      padding: 0.3rem 1.1rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.1rem;
+    }
+    .quiz-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 4.5vw, 1.9rem);
+      font-weight: 700;
+      color: #72243E;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-header p  { color: #993556; font-size: 0.95rem; }
+
+    /* Progreso */
+    .progress-wrap   { margin-bottom: 1.75rem; }
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #993556;
+      margin-bottom: 0.45rem;
+    }
+    .progress-labels strong { color: #72243E; }
+    .progress-track {
+      background-color: #FBEAF0;
+      border-radius: 9999px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      background-color: #D4537E;
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.45s ease;
+      box-shadow: 0 0 8px rgba(212,83,126,0.4);
+    }
+
+    /* Pregunta */
+    .question-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #72243E;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Opciones */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-bottom: 1.6rem;
+    }
+    .opt-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: left;
+      padding: 0.9rem 1.1rem;
+      border-radius: 0.85rem;
+      border: 2px solid #ED93B1;
+      background-color: white;
+      color: #993556;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.93rem;
+      line-height: 1.45;
+      width: 100%;
+      transition: border-color 0.15s, background-color 0.15s, color 0.15s, box-shadow 0.15s;
+      font-family: inherit;
+    }
+    .opt-btn:hover                { border-color: #D4537E; }
+    .opt-btn.selected             {
+      border-color: #D4537E;
+      background-color: #FBEAF0;
+      color: #72243E;
+      box-shadow: 0 2px 12px rgba(212,83,126,0.15);
+    }
+    .opt-letter {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #ED93B1;
+      background-color: transparent;
+      color: #D4537E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      transition: all 0.15s;
+    }
+    .opt-btn.selected .opt-letter {
+      border-color: #D4537E;
+      background-color: #D4537E;
+      color: white;
+    }
+
+    /* Navegación */
+    .nav-row { display: flex; gap: 0.75rem; }
+    .btn-back {
+      flex: 1;
+      padding: 0.85rem;
+      border-radius: 9999px;
+      border: 2px solid #D4537E;
+      background-color: white;
+      color: #D4537E;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.93rem;
+      transition: opacity 0.15s;
+      font-family: inherit;
+    }
+    .btn-back:hover { opacity: 0.8; }
+    .btn-next {
+      flex: 2;
+      padding: 0.85rem;
+      border-radius: 9999px;
+      border: none;
+      background-color: #D4537E;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.93rem;
+      box-shadow: 0 4px 14px rgba(212,83,126,0.35);
+      transition: opacity 0.15s, transform 0.1s;
+      font-family: inherit;
+    }
+    .btn-next:hover    { opacity: 0.88; }
+    .btn-next:active   { transform: scale(0.97); }
+    .btn-next:disabled {
+      background-color: #ED93B1;
+      cursor: not-allowed;
+      opacity: 0.6;
+      box-shadow: none;
+    }
+
+    /* ── Resultado ───────────────────────────── */
+    .result-wrap      { text-align: center; }
+    .result-emoji     {
+      font-size: 4.5rem;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      filter: drop-shadow(0 4px 10px rgba(75,21,40,0.2));
+    }
+    .result-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 4.5vw, 2rem);
+      font-weight: 700;
+      color: #72243E;
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+    }
+    .result-box {
+      background-color: #FBEAF0;
+      border: 1.5px solid #ED93B1;
+      border-radius: 1.1rem;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .result-box p {
+      color: #72243E;
+      font-size: 1.03rem;
+      line-height: 1.75;
+    }
+    .btn-restart {
+      background: none;
+      border: none;
+      color: #993556;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 0.85rem;
+      padding: 0.25rem;
+      font-family: inherit;
+      margin-top: 1.25rem;
+    }
+    .btn-restart:hover { opacity: 0.7; }
+
+    /* ── Footer ──────────────────────────────── */
+    .site-footer { text-align: center; padding-bottom: 1rem; }
+    .site-footer p {
+      font-family: 'Playfair Display', serif;
+      color: #993556;
+      font-size: 0.82rem;
+      font-style: italic;
+    }
+    .site-footer span { color: #D4537E; }
+
+    /* ── Responsive ──────────────────────────── */
+    @media (max-width: 480px) {
+      .card          { padding: 2rem 1.25rem; }
+      .btn-pill      { font-size: 0.93rem; padding: 1rem 1.5rem; }
+      .gancho-bridge br { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 1 — LOGO
+  ══════════════════════════════════════ -->
+  <section class="card logo-section fade-up">
+    <div class="logo-emoji">🌳</div>
+    <h1 class="logo-title">
+      Una <em>Burra</em>, un Árbol<br>y mucha Fe
+    </h1>
+    <hr class="logo-divider">
+    <p class="logo-author">por Maria Solís</p>
+    <p class="logo-tag">UNA HISTORIA REAL DE TRANSFORMACIÓN</p>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 2 — GANCHO
+  ══════════════════════════════════════ -->
+  <section class="card gancho-section fade-up delay-1">
+    <p class="gancho-label">UNA HISTORIA REAL QUE NADIE SE IMAGINA</p>
+
+    <h2 class="gancho-quote">
+      "Miré el refrigerador vacío.<br>
+      Mis hijos tenían hambre.<br>
+      <em>Y yo no tenía nada."</em>
+    </h2>
+
+    <p class="gancho-bridge">
+      Me asomé al camino sin saber qué hacer... y ahí, a lo lejos,<br>
+      vi algo que cambiaría mi vida para siempre.
+    </p>
+
+    <p class="gancho-suspense">
+      No era dinero. No era una persona.<br>
+      Era <em>UNA BURRA.</em>
+    </p>
+
+    <button class="btn-pill" onclick="scrollToQuiz()">
+      ¿Cómo una burra cambió mi vida? Descúbrelo →
+    </button>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 3 — QUIZ
+  ══════════════════════════════════════ -->
+  <section id="quiz-section" class="card quiz-section fade-up delay-2">
+    <div id="quiz-body"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2024 Maria Solís — <span>"Una Burra, un Árbol y mucha Fe"</span></p>
+  </footer>
+
+</div><!-- /page -->
+
+<script>
+  /* ── Datos ─────────────────────────────────────────── */
+  var QUESTIONS = [
+    {
+      text: "Cuando piensas en tu vida actual, ¿qué sientes más seguido?",
+      options: [
+        "Que algo me falta pero no sé qué es",
+        "Estoy bien, aunque quisiera más",
+        "Siento que estoy atascada y no sé cómo salir",
+        "Tengo claro lo que quiero pero me da miedo actuar"
+      ]
+    },
+    {
+      text: "¿Cuándo fue la última vez que tomaste una decisión grande por ti misma, sin pedir permiso a nadie?",
+      options: [
+        "Hace mucho tiempo, casi no recuerdo",
+        "El año pasado, pero me costó mucho",
+        "Hace poco, pero me da miedo las consecuencias",
+        "Lo hago seguido, soy bastante independiente"
+      ]
+    },
+    {
+      text: "¿Qué pasa cuando enfrentas un obstáculo en algo que quieres?",
+      options: [
+        "Me rindo fácilmente, no soy muy persistente",
+        "Lo intento un rato pero si no funciona, paro",
+        "Me frustro pero eventualmente busco otra forma",
+        "Lo veo como un reto y sigo hasta lograrlo"
+      ]
+    },
+    {
+      text: "¿Cómo te describes a ti misma en este momento de tu vida?",
+      options: [
+        "Perdida y sin dirección clara",
+        "En proceso de encontrarme a mí misma",
+        "Con ganas de cambiar pero sin saber cómo empezar",
+        "Lista para el siguiente nivel, solo necesito un empujón"
+      ]
+    },
+    {
+      text: "¿Cuál es tu relación con la fe (en Dios, el universo o en ti misma)?",
+      options: [
+        "Me cuesta creer, he vivido muchas decepciones",
+        "Tengo fe pero me falta constancia",
+        "Mi fe es mi motor, aunque a veces tambalea",
+        "Creo firmemente que todo lo que me pasa tiene un propósito"
+      ]
+    },
+    {
+      text: "Cuando alguien cercano no cree en tus sueños, ¿qué haces?",
+      options: [
+        "Me desanimo mucho y lo dejo ir",
+        "Me afecta pero trato de seguir adelante",
+        "Me enojo y luego lo uso como motivación",
+        "Su opinión no cambia mis planes, yo me creo primero"
+      ]
+    },
+    {
+      text: "Una mamá vivió una experiencia muy fuerte con sus hijos pequeños — y fue justo en ese momento de quiebre donde recuperó su fe y encontró su camino. Si pudieras leer esa historia real, ¿para qué la leerías?",
+      options: [
+        "Para sentirme acompañada y saber que no estoy sola en mis luchas",
+        "Para encontrar inspiración y recordar que sí se puede salir adelante",
+        "Para aprender de su proceso y encontrar herramientas para el mío",
+        "Para confirmar que si ella pudo levantarse de eso, yo también puedo"
+      ]
+    }
+  ];
+
+  var RESULTS = [
+    {
+      emoji: "🌱",
+      title: "Estás en el inicio de tu despertar",
+      text:  "Algo dentro de ti sabe que hay más para tu vida, aunque todavía no encuentras el camino. Eso es suficiente para comenzar. La historia de Lupita fue escrita exactamente para alguien como tú.",
+      max: 10
+    },
+    {
+      emoji: "🔥",
+      title: "Estás lista para dar el salto",
+      text:  "Tienes la conciencia, tienes las ganas, y tienes más fuerza de la que crees. Lo que te falta es una historia que te recuerde que sí se puede. Este libro llegó a ti en el momento perfecto.",
+      max: 18
+    },
+    {
+      emoji: "👑",
+      title: "Ya tienes el fuego, ahora necesitas el mapa",
+      text:  "Eres una mujer que ya tomó decisiones valientes. Sabes lo que quieres y no te rindes fácil. Este libro te dará el mapa que necesitas para llegar más lejos y más rápido.",
+      max: 28
+    }
+  ];
+
+  /* ── Estado ────────────────────────────────────────── */
+  var currentQ = 0;
+  var answers  = [];   /* cada respuesta guarda valor 1-4 */
+  var selected = null; /* índice 0-3 de la opción activa  */
+  var done     = false;
+
+  /* ── Utilidades ────────────────────────────────────── */
+  function getResult(score) {
+    for (var i = 0; i < RESULTS.length; i++) {
+      if (score <= RESULTS[i].max) return RESULTS[i];
+    }
+    return RESULTS[RESULTS.length - 1];
+  }
+
+  function esc(str) {
+    return String(str)
+      .replace(/&/g,  '&amp;')
+      .replace(/</g,  '&lt;')
+      .replace(/>/g,  '&gt;')
+      .replace(/"/g,  '&quot;')
+      .replace(/'/g,  '&#39;');
+  }
+
+  function scrollToQuiz() {
+    document.getElementById('quiz-section')
+      .scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ── Render principal ──────────────────────────────── */
+  function render() {
+    done ? renderResult() : renderQuestion();
+  }
+
+  /* ── Render pregunta ───────────────────────────────── */
+  function renderQuestion() {
+    var q        = QUESTIONS[currentQ];
+    var total    = QUESTIONS.length;
+    var pct      = Math.round((currentQ / total) * 100);
+    var letters  = ['A','B','C','D'];
+
+    /* Opciones */
+    var optsHTML = '';
+    for (var i = 0; i < q.options.length; i++) {
+      var sel = (selected === i) ? ' selected' : '';
+      optsHTML +=
+        '<button class="opt-btn' + sel + '" onclick="selectOpt(' + i + ')">' +
+          '<span class="opt-letter">' + letters[i] + '</span>' +
+          esc(q.options[i]) +
+        '</button>';
+    }
+
+    /* Botón atrás */
+    var backHTML = currentQ > 0
+      ? '<button class="btn-back" onclick="goBack()">← Atrás</button>'
+      : '';
+
+    /* Label siguiente */
+    var nextLabel = currentQ < total - 1 ? 'Siguiente →' : 'Ver mi resultado →';
+    var disabled  = selected === null ? ' disabled' : '';
+
+    document.getElementById('quiz-body').innerHTML =
+      '<div class="quiz-header">' +
+        '<span class="quiz-badge">✨ Quiz gratuito</span>' +
+        '<h2>¿Estás lista para tu reset de vida?</h2>' +
+        '<p>7 preguntas que revelarán en qué punto del camino estás.</p>' +
+      '</div>' +
+
+      '<div class="progress-wrap">' +
+        '<div class="progress-labels">' +
+          '<span>Pregunta <strong>' + (currentQ + 1) + '</strong> de ' + total + '</span>' +
+          '<span>' + pct + '%</span>' +
+        '</div>' +
+        '<div class="progress-track">' +
+          '<div class="progress-fill" style="width:' + pct + '%"></div>' +
+        '</div>' +
+      '</div>' +
+
+      '<p class="question-text">' + esc(q.text) + '</p>' +
+
+      '<div class="options-list">' + optsHTML + '</div>' +
+
+      '<div class="nav-row">' +
+        backHTML +
+        '<button class="btn-next" onclick="goNext()"' + disabled + '>' + nextLabel + '</button>' +
+      '</div>';
+  }
+
+  /* ── Render resultado ──────────────────────────────── */
+  function renderResult() {
+    var score  = 0;
+    for (var i = 0; i < answers.length; i++) score += answers[i];
+    var r = getResult(score);
+
+    document.getElementById('quiz-body').innerHTML =
+      '<div class="result-wrap">' +
+        '<div class="result-emoji">' + r.emoji + '</div>' +
+        '<h2 class="result-title">' + esc(r.title) + '</h2>' +
+        '<div class="result-box"><p>' + esc(r.text) + '</p></div>' +
+        '<a href="https://pay.hotmart.com/S103602281W" target="_blank" rel="noopener noreferrer" class="btn-pill full">' +
+          'Quiero el libro que me transformará →' +
+        '</a>' +
+        '<br>' +
+        '<button class="btn-restart" onclick="restart()">Repetir el quiz</button>' +
+      '</div>';
+
+    scrollToQuiz();
+  }
+
+  /* ── Acciones ──────────────────────────────────────── */
+  function selectOpt(idx) {
+    selected = idx;
+    render();
+  }
+
+  function goNext() {
+    if (selected === null) return;
+    answers.push(selected + 1); /* puntaje 1-4 */
+    selected = null;
+    if (currentQ < QUESTIONS.length - 1) {
+      currentQ++;
+      render();
+      scrollToQuiz();
+    } else {
+      done = true;
+      render();
+    }
+  }
+
+  function goBack() {
+    if (currentQ > 0) {
+      answers.pop();
+      currentQ--;
+      selected = null;
+      render();
+    }
+  }
+
+  function restart() {
+    currentQ = 0;
+    answers  = [];
+    selected = null;
+    done     = false;
+    render();
+    scrollToQuiz();
+  }
+
+  /* ── Arranque ──────────────────────────────────────── */
+  render();
+</script>
+
+</body>
+</html>
